@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Json;
 using System.Runtime.CompilerServices;
+using System.Security.AccessControl;
 using System.Text;
 using Newtonsoft.Json;
 
@@ -17,7 +18,14 @@ class Program {
                 return mismatch;
             }
 
-            return await _CLIENT.GetStringAsync(_URL + "messages");
+            var req = new HttpRequestMessage{
+                Method = HttpMethod.Get,
+                RequestUri = new Uri(_URL + "messages")
+            };
+
+            var res = await _CLIENT.SendAsync(req);
+
+            return await resToString(res);
         }},
 
         {"get", async (args)=>{
@@ -26,7 +34,14 @@ class Program {
                 return mismatch;
             }
 
-            return await _CLIENT.GetStringAsync(_URL + $"messages/{args[0]}");
+            var req = new HttpRequestMessage{
+                Method = HttpMethod.Get,
+                RequestUri = new Uri(_URL + $"messages/{args[0]}")
+            };
+
+            var res = await _CLIENT.SendAsync(req);
+
+            return await resToString(res);
         }},
 
         {"add", async (args)=>{
@@ -42,9 +57,8 @@ class Program {
             };
 
             var res = await _CLIENT.SendAsync(req);
-            var result = await res.Content.ReadAsStringAsync();
 
-            return result;
+            return await resToString(res);
         }},
 
         {"delete", async (args)=>{
@@ -60,7 +74,7 @@ class Program {
 
             var res = await _CLIENT.SendAsync(req);
             
-            return await res.Content.ReadAsStringAsync();
+            return await resToString(res);
         }},
 
         {"update", async (args)=>{
@@ -77,7 +91,7 @@ class Program {
 
             var res = await _CLIENT.SendAsync(req);
             
-            return await res.Content.ReadAsStringAsync();
+            return await resToString(res);
         }},
     };
 
@@ -103,16 +117,14 @@ class Program {
 
             var res = await _COMMAND_DICT[parts[0]](parts.Skip(1).ToArray());
 
-            var json = JsonConvert.SerializeObject(JsonConvert.DeserializeObject(res), Formatting.Indented);
-
-            Console.WriteLine(json);
+            Console.WriteLine(res);
         }
     }
 
     static void writeHelp() {
         Console.WriteLine(
             "Commands:\n" +
-            "help                        display commands" +
+            "help                        display commands\n" +
             "all                         view all messages\n" +
             "get|[id]                    view one message\n" +
             "add|[Message]               add a message\n" +
@@ -127,5 +139,12 @@ class Program {
         }
 
         return null;
+    }
+
+    static async Task<string> resToString(HttpResponseMessage res) {
+        return JsonConvert.SerializeObject(
+            JsonConvert.DeserializeObject(await res.Content.ReadAsStringAsync()),
+            Formatting.Indented
+        );
     }
 }
