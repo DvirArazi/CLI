@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 class Program {
 
-    static string _URL = "https://localhost:7180/api/";
+    static string _URL = "https://qlik-assignment.herokuapp.com/api/";
 
     static HttpClient _CLIENT = new HttpClient();
 
