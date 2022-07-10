@@ -1,0 +1,17 @@
+D:\VS Code Projects\CLI\bin\release\net6.0\CLI.exe
+D:\VS Code Projects\CLI\bin\release\net6.0\CLI.deps.json
+D:\VS Code Projects\CLI\bin\release\net6.0\CLI.runtimeconfig.json
+D:\VS Code Projects\CLI\bin\release\net6.0\CLI.dll
+D:\VS Code Projects\CLI\bin\release\net6.0\CLI.pdb
+D:\VS Code Projects\CLI\bin\release\net6.0\Newtonsoft.Json.dll
+D:\VS Code Projects\CLI\obj\release\net6.0\CLI.csproj.AssemblyReference.cache
+D:\VS Code Projects\CLI\obj\release\net6.0\CLI.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS Code Projects\CLI\obj\release\net6.0\CLI.AssemblyInfoInputs.cache
+D:\VS Code Projects\CLI\obj\release\net6.0\CLI.AssemblyInfo.cs
+D:\VS Code Projects\CLI\obj\release\net6.0\CLI.csproj.CoreCompileInputs.cache
+D:\VS Code Projects\CLI\obj\release\net6.0\CLI.csproj.CopyComplete
+D:\VS Code Projects\CLI\obj\release\net6.0\CLI.dll
+D:\VS Code Projects\CLI\obj\release\net6.0\refint\CLI.dll
+D:\VS Code Projects\CLI\obj\release\net6.0\CLI.pdb
+D:\VS Code Projects\CLI\obj\release\net6.0\CLI.genruntimeconfig.cache
+D:\VS Code Projects\CLI\obj\release\net6.0\ref\CLI.dll

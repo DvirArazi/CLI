@@ -1,0 +1,6 @@
+D:\VS Code Projects\CLI\bin\release\net6.0\publish\CLI.exe
+D:\VS Code Projects\CLI\bin\release\net6.0\publish\CLI.dll
+D:\VS Code Projects\CLI\bin\release\net6.0\publish\CLI.deps.json
+D:\VS Code Projects\CLI\bin\release\net6.0\publish\CLI.runtimeconfig.json
+D:\VS Code Projects\CLI\bin\release\net6.0\publish\CLI.pdb
+D:\VS Code Projects\CLI\bin\release\net6.0\publish\Newtonsoft.Json.dll
